@@ -14,3 +14,20 @@ C:\Users\SCC COMLAB\source\repos\barangayrecordandmanagementSystem\barangayrecor
 C:\Users\SCC COMLAB\source\repos\barangayrecordandmanagementSystem\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.documents.resources
 C:\Users\SCC COMLAB\source\repos\barangayrecordandmanagementSystem\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.csproj.CopyComplete
 C:\Users\SCC COMLAB\source\repos\barangayrecordandmanagementSystem\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.bgryofficials.resources
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\barangayrecordandmanagementSystem.exe.config
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\barangayrecordandmanagementSystem.exe
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\barangayrecordandmanagementSystem.pdb
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\MetroFramework.dll
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.csproj.AssemblyReference.cache
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.bgryofficials.resources
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.documents.resources
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.Form1.resources
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.Properties.Resources.resources
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.csproj.GenerateResource.cache
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.csproj.CopyComplete
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.exe
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.pdb
+C:\Users\SCCpc14\Source\Repos\newbrms\barangayrecordandmanagementSystem\obj\Debug\barangayrecordandmanagementSystem.Frmofficials.resources

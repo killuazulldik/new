@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace barangayrecordandmanagementSystem
 {
-    public partial class bgryofficials : Form
+    public partial class Frmofficials : Form
     {
-        public bgryofficials()
+        public Frmofficials()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Frmofficials_Load(object sender, EventArgs e)
         {
-            Frmofficials frmoff = new Frmofficials();
-            frmoff.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
