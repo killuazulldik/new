@@ -22,6 +22,7 @@ namespace barangayrecordandmanagementSystem
             resident official = new resident();
             official.TopLevel = false;
             panelmain.Controls.Add(official);
+            official.Loadrecord();
             official.BringToFront();
             official.Dock = DockStyle.Fill;
             official.Show();

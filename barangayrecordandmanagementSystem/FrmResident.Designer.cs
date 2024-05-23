@@ -88,6 +88,7 @@ namespace barangayrecordandmanagementSystem
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnBrows = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
@@ -325,6 +326,7 @@ namespace barangayrecordandmanagementSystem
             // txtPrecint
             // 
             this.txtPrecint.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecint.Enabled = false;
             this.txtPrecint.Location = new System.Drawing.Point(711, 155);
             this.txtPrecint.Name = "txtPrecint";
             this.txtPrecint.Size = new System.Drawing.Size(241, 20);
@@ -370,7 +372,6 @@ namespace barangayrecordandmanagementSystem
             // 
             // txtEmail
             // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Location = new System.Drawing.Point(410, 587);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(241, 20);
@@ -477,6 +478,7 @@ namespace barangayrecordandmanagementSystem
             this.cboVoter.Name = "cboVoter";
             this.cboVoter.Size = new System.Drawing.Size(241, 21);
             this.cboVoter.TabIndex = 48;
+            this.cboVoter.SelectedIndexChanged += new System.EventHandler(this.cboVoter_SelectedIndexChanged);
             // 
             // txtOccup
             // 
@@ -490,11 +492,14 @@ namespace barangayrecordandmanagementSystem
             // 
             this.cboPurok.FormattingEnabled = true;
             this.cboPurok.Items.AddRange(new object[] {
-            "SINGLE",
-            "MARRIED",
-            "LIVE IN",
-            "BALO",
-            "SINGLE PARENT"});
+            "PUROK 1",
+            "PUROK 2",
+            "PUROK 3",
+            "PUROK 4",
+            "PUROK 5",
+            "PUROK 6",
+            "PUROK 7 ",
+            "PUROK 8"});
             this.cboPurok.Location = new System.Drawing.Point(711, 206);
             this.cboPurok.Name = "cboPurok";
             this.cboPurok.Size = new System.Drawing.Size(241, 21);
@@ -540,18 +545,21 @@ namespace barangayrecordandmanagementSystem
             this.cboCatergory.Name = "cboCatergory";
             this.cboCatergory.Size = new System.Drawing.Size(241, 21);
             this.cboCatergory.TabIndex = 61;
+            this.cboCatergory.SelectedIndexChanged += new System.EventHandler(this.cboCatergory_SelectedIndexChanged);
             // 
             // txtHouse
             // 
             this.txtHouse.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtHouse.Enabled = false;
             this.txtHouse.Location = new System.Drawing.Point(711, 454);
             this.txtHouse.Name = "txtHouse";
-            this.txtHouse.Size = new System.Drawing.Size(241, 20);
+            this.txtHouse.Size = new System.Drawing.Size(212, 20);
             this.txtHouse.TabIndex = 62;
             // 
             // txtHead
             // 
             this.txtHead.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtHead.Enabled = false;
             this.txtHead.Location = new System.Drawing.Point(711, 502);
             this.txtHead.Name = "txtHead";
             this.txtHead.Size = new System.Drawing.Size(241, 20);
@@ -561,8 +569,8 @@ namespace barangayrecordandmanagementSystem
             // 
             this.cboDisability.FormattingEnabled = true;
             this.cboDisability.Items.AddRange(new object[] {
-            "HOUSEHOLD HEAD",
-            " MEMBER"});
+            "YES",
+            "NO"});
             this.cboDisability.Location = new System.Drawing.Point(711, 545);
             this.cboDisability.Name = "cboDisability";
             this.cboDisability.Size = new System.Drawing.Size(241, 21);
@@ -619,6 +627,7 @@ namespace barangayrecordandmanagementSystem
             this.btnsave.Text = "SAVE";
             this.btnsave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // picImage
             // 
@@ -629,6 +638,7 @@ namespace barangayrecordandmanagementSystem
             this.picImage.Size = new System.Drawing.Size(348, 316);
             this.picImage.TabIndex = 69;
             this.picImage.TabStop = false;
+            this.picImage.Click += new System.EventHandler(this.picImage_Click);
             // 
             // button2
             // 
@@ -654,6 +664,8 @@ namespace barangayrecordandmanagementSystem
             this.lblName.Size = new System.Drawing.Size(351, 42);
             this.lblName.TabIndex = 71;
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.TextChanged += new System.EventHandler(this.lblName_TextChanged);
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // cboStatus
             // 
@@ -680,6 +692,21 @@ namespace barangayrecordandmanagementSystem
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnBrows
+            // 
+            this.btnBrows.BackColor = System.Drawing.Color.Green;
+            this.btnBrows.FlatAppearance.BorderSize = 0;
+            this.btnBrows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrows.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBrows.Location = new System.Drawing.Point(922, 449);
+            this.btnBrows.Name = "btnBrows";
+            this.btnBrows.Size = new System.Drawing.Size(30, 27);
+            this.btnBrows.TabIndex = 74;
+            this.btnBrows.Text = ".....";
+            this.btnBrows.UseVisualStyleBackColor = false;
+            this.btnBrows.Visible = false;
+            // 
             // FrmResident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,6 +714,7 @@ namespace barangayrecordandmanagementSystem
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(987, 699);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBrows);
             this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.lblName);
@@ -745,6 +773,7 @@ namespace barangayrecordandmanagementSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmResident";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmResident_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
@@ -759,59 +788,60 @@ namespace barangayrecordandmanagementSystem
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMname;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBplace;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtBday;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtEduc;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtPrecint;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtReligion;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox cboCivil;
-        private System.Windows.Forms.ComboBox cboGender;
-        private System.Windows.Forms.ComboBox cboVoter;
-        private System.Windows.Forms.TextBox txtOccup;
-        private System.Windows.Forms.ComboBox cboPurok;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cboCatergory;
-        private System.Windows.Forms.TextBox txtHouse;
-        private System.Windows.Forms.TextBox txtHead;
-        private System.Windows.Forms.ComboBox cboDisability;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnupdate;
         public System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.PictureBox picImage;
         public System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnBrows;
+        public System.Windows.Forms.TextBox txtID;
+        public System.Windows.Forms.TextBox txtLname;
+        public System.Windows.Forms.TextBox txtFname;
+        public System.Windows.Forms.TextBox txtMname;
+        public System.Windows.Forms.TextBox txtAlias;
+        public System.Windows.Forms.TextBox txtBplace;
+        public System.Windows.Forms.DateTimePicker dtBday;
+        public System.Windows.Forms.TextBox txtAddress;
+        public System.Windows.Forms.TextBox txtEduc;
+        public System.Windows.Forms.TextBox txtPrecint;
+        public System.Windows.Forms.TextBox txtContact;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtReligion;
+        public System.Windows.Forms.TextBox txtAge;
+        public System.Windows.Forms.ComboBox cboCivil;
+        public System.Windows.Forms.ComboBox cboGender;
+        public System.Windows.Forms.ComboBox cboVoter;
+        public System.Windows.Forms.TextBox txtOccup;
+        public System.Windows.Forms.ComboBox cboPurok;
+        public System.Windows.Forms.ComboBox cboCatergory;
+        public System.Windows.Forms.TextBox txtHouse;
+        public System.Windows.Forms.TextBox txtHead;
+        public System.Windows.Forms.ComboBox cboDisability;
+        public System.Windows.Forms.PictureBox picImage;
+        public System.Windows.Forms.ComboBox cboStatus;
     }
 }
