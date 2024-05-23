@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\barangayrecordandmanagementSystem"
   ],
-  "SelectedNode": "\\barangayrecordandmanagementSystem.sln",
+  "SelectedNode": "\\barangayrecordandmanagementSystem\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

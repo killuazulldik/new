@@ -19,7 +19,12 @@ namespace barangayrecordandmanagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            resident official = new resident();
+            official.TopLevel = false;
+            panelmain.Controls.Add(official);
+            official.BringToFront();
+            official.Dock = DockStyle.Fill;
+            official.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,7 +39,7 @@ namespace barangayrecordandmanagementSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-          
+            this.Close();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -52,6 +57,8 @@ namespace barangayrecordandmanagementSystem
             bgryofficials off = new bgryofficials();
             off.TopLevel = false;
             panelmain.Controls.Add(off);
+            off.LoaderRecord();
+            off.LoaderPurok();
             off.BringToFront();
             off.Dock = DockStyle.Fill;
             off.Show();
