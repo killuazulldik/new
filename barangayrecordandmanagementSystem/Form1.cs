@@ -23,6 +23,8 @@ namespace barangayrecordandmanagementSystem
             official.TopLevel = false;
             panelmain.Controls.Add(official);
             official.Loadrecord();
+            official.LoadHead();
+            official.LoadVaccine();
             official.BringToFront();
             official.Dock = DockStyle.Fill;
             official.Show();
@@ -68,6 +70,16 @@ namespace barangayrecordandmanagementSystem
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBlotter_Click(object sender, EventArgs e)
+        {
+            FrmIssue f = new FrmIssue();
+            f.TopLevel = false;
+            panelmain.Controls.Add(f);
+            f.LoadRecords();
+            f.BringToFront();
+            f.Show();
         }
     }
 }

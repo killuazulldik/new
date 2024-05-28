@@ -33,6 +33,7 @@ namespace barangayrecordandmanagementSystem
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
@@ -84,7 +85,6 @@ namespace barangayrecordandmanagementSystem
             this.btnsave = new System.Windows.Forms.Button();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -98,6 +98,7 @@ namespace barangayrecordandmanagementSystem
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -134,6 +135,18 @@ namespace barangayrecordandmanagementSystem
             this.label1.Size = new System.Drawing.Size(140, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "RESIDENT INFORMATION";
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblName.Location = new System.Drawing.Point(300, 1);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(391, 30);
+            this.lblName.TabIndex = 71;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.TextChanged += new System.EventHandler(this.lblName_TextChanged);
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // label2
             // 
@@ -265,6 +278,7 @@ namespace barangayrecordandmanagementSystem
             this.dtBday.Name = "dtBday";
             this.dtBday.Size = new System.Drawing.Size(241, 20);
             this.dtBday.TabIndex = 21;
+            this.dtBday.ValueChanged += new System.EventHandler(this.dtBday_ValueChanged);
             // 
             // label9
             // 
@@ -540,7 +554,7 @@ namespace barangayrecordandmanagementSystem
             this.cboCatergory.FormattingEnabled = true;
             this.cboCatergory.Items.AddRange(new object[] {
             "HOUSEHOLD HEAD",
-            " MEMBER"});
+            "MEMBER"});
             this.cboCatergory.Location = new System.Drawing.Point(711, 412);
             this.cboCatergory.Name = "cboCatergory";
             this.cboCatergory.Size = new System.Drawing.Size(241, 21);
@@ -553,7 +567,7 @@ namespace barangayrecordandmanagementSystem
             this.txtHouse.Enabled = false;
             this.txtHouse.Location = new System.Drawing.Point(711, 454);
             this.txtHouse.Name = "txtHouse";
-            this.txtHouse.Size = new System.Drawing.Size(212, 20);
+            this.txtHouse.Size = new System.Drawing.Size(241, 20);
             this.txtHouse.TabIndex = 62;
             // 
             // txtHead
@@ -592,7 +606,7 @@ namespace barangayrecordandmanagementSystem
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(880, 654);
+            this.button4.Location = new System.Drawing.Point(882, 654);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 33);
             this.button4.TabIndex = 68;
@@ -613,6 +627,7 @@ namespace barangayrecordandmanagementSystem
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnsave
             // 
@@ -656,17 +671,6 @@ namespace barangayrecordandmanagementSystem
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(25, 580);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(351, 42);
-            this.lblName.TabIndex = 71;
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblName.TextChanged += new System.EventHandler(this.lblName_TextChanged);
-            this.lblName.Click += new System.EventHandler(this.lblName_Click);
-            // 
             // cboStatus
             // 
             this.cboStatus.FormattingEnabled = true;
@@ -706,6 +710,7 @@ namespace barangayrecordandmanagementSystem
             this.btnBrows.Text = ".....";
             this.btnBrows.UseVisualStyleBackColor = false;
             this.btnBrows.Visible = false;
+            this.btnBrows.Click += new System.EventHandler(this.btnBrows_Click);
             // 
             // FrmResident
             // 
@@ -717,7 +722,6 @@ namespace barangayrecordandmanagementSystem
             this.Controls.Add(this.btnBrows);
             this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.button4);
@@ -817,7 +821,6 @@ namespace barangayrecordandmanagementSystem
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnBrows;
         public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.TextBox txtLname;
         public System.Windows.Forms.TextBox txtFname;
@@ -843,5 +846,6 @@ namespace barangayrecordandmanagementSystem
         public System.Windows.Forms.ComboBox cboDisability;
         public System.Windows.Forms.PictureBox picImage;
         public System.Windows.Forms.ComboBox cboStatus;
+        public System.Windows.Forms.Button btnBrows;
     }
 }

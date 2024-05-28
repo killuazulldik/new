@@ -32,7 +32,7 @@ namespace barangayrecordandmanagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnBlotter = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@ namespace barangayrecordandmanagementSystem
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.btnBlotter);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
@@ -96,24 +96,25 @@ namespace barangayrecordandmanagementSystem
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnBlotter
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(104)))), ((int)(((byte)(80)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(218)))));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(0, 374);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(245, 44);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "  BLOTTER";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnBlotter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBlotter.FlatAppearance.BorderSize = 0;
+            this.btnBlotter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(104)))), ((int)(((byte)(80)))));
+            this.btnBlotter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlotter.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlotter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(218)))));
+            this.btnBlotter.Image = ((System.Drawing.Image)(resources.GetObject("btnBlotter.Image")));
+            this.btnBlotter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBlotter.Location = new System.Drawing.Point(0, 374);
+            this.btnBlotter.Name = "btnBlotter";
+            this.btnBlotter.Size = new System.Drawing.Size(245, 44);
+            this.btnBlotter.TabIndex = 8;
+            this.btnBlotter.Text = "  BLOTTER";
+            this.btnBlotter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBlotter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBlotter.UseVisualStyleBackColor = true;
+            this.btnBlotter.Click += new System.EventHandler(this.btnBlotter_Click);
             // 
             // button7
             // 
@@ -405,7 +406,7 @@ namespace barangayrecordandmanagementSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnBlotter;
     }
 }
 

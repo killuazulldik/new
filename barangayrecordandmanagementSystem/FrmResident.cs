@@ -16,11 +16,13 @@ namespace barangayrecordandmanagementSystem
         SqlConnection cn;
         SqlCommand cmd;
         SqlDataReader dr;
-        FrmResident f;
+        resident f;
         public string _id;
-        private resident resident;
+       //    private resident resident;
 
-        public FrmResident(FrmResident f)
+        //private resident resident;
+
+        public FrmResident(resident f)
         {
             InitializeComponent();
             cn = new SqlConnection(dbconnection.connection);
@@ -28,10 +30,15 @@ namespace barangayrecordandmanagementSystem
             LoadPurok();
         }
 
-        public FrmResident(resident resident)
-        {
-            this.resident = resident;
-        }
+        //public FrmResident(resident resident)
+        //{
+        //    this.resident = resident;
+        //}
+
+        //public FrmResident(resident resident)
+        //{
+        //    this.resident = resident;
+        //}
 
         public void LoadPurok()
         {
@@ -135,6 +142,8 @@ namespace barangayrecordandmanagementSystem
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Record have been successfully saved!", var.title,MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                    f.Loadrecord();
                 }
             }
             catch (Exception ex) {
@@ -152,12 +161,13 @@ namespace barangayrecordandmanagementSystem
         {
             if (cboCatergory.Text == "HOUSEHOLD HEAD")
             {
-                txtHouse.Enabled = false;
-                btnBrows.Visible = true;
+                txtHouse.Enabled = true;
+                btnBrows.Visible = false;
             }
             else {
-                txtHead.Enabled = true;
-                btnBrows.Visible = false;
+                
+                txtHouse.Enabled = false;
+                btnBrows.Visible = true;
             }
         }
 
@@ -171,12 +181,113 @@ namespace barangayrecordandmanagementSystem
             else
             {
                 txtPrecint.Enabled = false;
+                txtPrecint.Clear();
             }
         }
 
         private void FrmResident_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Do you want to update this record?", var.title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    picImage.BackgroundImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] arrImage = ms.GetBuffer();
+                    cn.Open();
+                    cmd = new SqlCommand("update Table_Resident set nid=@nid, lname=@lname, fname=@fname, mname=@mname, alias=@alias, bday=@bday, bplace=@bplace, age=@age, civilstatus=@civilstatus, gender=@gender, religion=@religion, email=@email, contact=@contact, voters=@voters, precint=@precint, purok=@purok, education=@education, occupation=@occupation, address=@address, category=@category, house=@house, head=@head, disability=@disability, status=@status, pic=@pic where id=@id", cn);
+                    cmd.Parameters.AddWithValue("@nid", txtID.Text);
+                    cmd.Parameters.AddWithValue("@lname", txtLname.Text);
+                    cmd.Parameters.AddWithValue("@fname", txtFname.Text);
+                    cmd.Parameters.AddWithValue("@mname", txtMname.Text);
+                    cmd.Parameters.AddWithValue("@alias", txtAlias.Text);
+                    cmd.Parameters.AddWithValue("@bday", dtBday.Value);
+                    cmd.Parameters.AddWithValue("@bplace", txtBplace.Text);
+                    cmd.Parameters.AddWithValue("@age", txtAge.Text);
+                    cmd.Parameters.AddWithValue("@civilstatus", cboCivil.Text);
+                    cmd.Parameters.AddWithValue("@gender", cboGender.Text);
+                    cmd.Parameters.AddWithValue("@religion", txtReligion.Text);
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@contact", txtContact.Text);
+                    cmd.Parameters.AddWithValue("@voters", cboVoter.Text);
+                    cmd.Parameters.AddWithValue("@precint", txtPrecint.Text);
+                    cmd.Parameters.AddWithValue("@purok", cboPurok.Text);
+                    cmd.Parameters.AddWithValue("@education", txtEduc.Text);
+                    cmd.Parameters.AddWithValue("@occupation", txtOccup.Text);
+                    cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@category", cboCatergory.Text);
+                    cmd.Parameters.AddWithValue("@house", txtHouse.Text);
+                    cmd.Parameters.AddWithValue("@head", txtHead.Text);
+                    cmd.Parameters.AddWithValue("@disability", cboDisability.Text);
+                    cmd.Parameters.AddWithValue("@status", cboStatus.Text);
+                    cmd.Parameters.AddWithValue("@pic", arrImage);
+                    cmd.Parameters.AddWithValue("@id", _id);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Record have been successfully updated!", var.title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    f.Loadrecord();
+                    this.Dispose();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message, var.title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void Clear() {
+
+            picImage.BackgroundImage = Image.FromFile(Application.StartupPath + @"\profile.png");
+            txtAddress.Clear();
+            txtAge.Clear();
+            txtAlias.Clear();
+            txtContact.Clear();
+            txtEduc.Clear();
+            txtEmail.Clear(); 
+            txtFname.Clear();
+            txtHead.Clear();
+            txtHouse.Clear();
+            txtID.Clear();
+            txtLname.Clear();
+            txtMname.Clear();
+            txtOccup.Clear();
+            txtBplace.Clear();
+            txtPrecint.Clear();
+            txtReligion.Clear();
+            cboCatergory.Text = "";
+            cboCivil.Text = "";
+            cboDisability.Text = "";
+            cboGender.Text = "";
+            cboPurok.Text = "";
+            cboStatus.Text = "";
+            cboVoter.Text = "";
+            dtBday.Value = DateTime.Now;
+            btnsave.Enabled = true;
+            btnupdate.Enabled = false;
+            txtID.Focus();
+
+        }
+
+        private void dtBday_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - dtBday.Value.Year;
+            txtAge.Text = age.ToString();
+
+        }
+
+        private void btnBrows_Click(object sender, EventArgs e)
+        {
+            FrmHousehold f = new FrmHousehold(this);
+            f.Loadrecord();
+            f.ShowDialog();
         }
     }
     }
